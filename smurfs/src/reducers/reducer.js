@@ -5,6 +5,7 @@ import {
   POST_SMURFS_START,
   POST_SMURFS_SUCCESS,
   POST_SMURFS_FAILURE,
+  ADD_SMURF,
 } from "../actions/actions";
 
 export const initialState = {
@@ -53,6 +54,11 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         error: action.payload,
+      };
+    case ADD_SMURF:
+      return {
+        ...state,
+        smurfs: action.payload,
       };
     default:
       return state;

@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { getSmurfs } from "../actions/actions";
+import { AddSmurfForm } from "../components/AddSmurfForm";
 
 export const SmurfList = ({ getSmurfs, smurfs, isFetching, error }) => {
   if (error !== "")
@@ -10,6 +11,7 @@ export const SmurfList = ({ getSmurfs, smurfs, isFetching, error }) => {
         <h1>Smurf List</h1>
         <h2>{error}</h2>
         <button onClick={getSmurfs}>Get Smurfs</button>
+        <AddSmurfForm />
       </div>
     );
   if (isFetching) {
@@ -22,6 +24,7 @@ export const SmurfList = ({ getSmurfs, smurfs, isFetching, error }) => {
           <li>{smurfs.name}</li>
           <button onClick={getSmurfs}>Get Smurfs</button>
         </ul>
+        <AddSmurfForm />
       </div>
     );
   }

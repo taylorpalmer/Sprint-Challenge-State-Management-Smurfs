@@ -1,10 +1,7 @@
-import React, { useState, useReducer } from "react";
-import { initialState, reducer } from "../reducers/reducer";
+import React, { useState } from "react";
 
-export const AddSmurfForm = () => (dispatch) => {
+export const AddSmurfForm = (dispatch) => {
   const [newSmurfText, setNewSmurfText] = useState("");
-
-  const [state] = useReducer(reducer, initialState);
 
   const handleChanges = (e) => {
     setNewSmurfText(e.target.value);
