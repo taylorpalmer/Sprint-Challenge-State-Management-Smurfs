@@ -8,6 +8,8 @@ export const POST_SMURFS_START = "POST_SMURFS_START";
 export const POST_SMURFS_SUCCESS = "POST_SMURFS_SUCCESS";
 export const POST_SMURFS_FAILURE = "POST_SMURFS_FAILURE";
 
+export const ADD_SMURF = "ADD_SMURF";
+
 export const getSmurfs = (smurf) => (dispatch) => {
   dispatch({ type: FETCHING_SMURFS_START });
 
@@ -52,4 +54,11 @@ export const postSmurfs = (smurf) => (dispatch) => {
         payload: res.error,
       });
     });
+};
+
+export const addSmurf = (smurf) => (dispatch) => {
+  dispatch({
+    type: ADD_SMURF,
+    payload: smurf,
+  });
 };

@@ -7,18 +7,22 @@ export const SmurfList = ({ getSmurfs, smurfs, isFetching, error }) => {
   if (error !== "")
     return (
       <div>
+        <h1>Smurf List</h1>
         <h2>{error}</h2>
-        <button></button>
+        <button onClick={getSmurfs}>Get Smurfs</button>
       </div>
     );
   if (isFetching) {
     return <h2>Finding Smurfs</h2>;
   } else {
     return (
-      <ul className="smurf-list">
-        <li>{smurfs.name}</li>
-        <button></button>
-      </ul>
+      <div>
+        <h1>Smurf List</h1>
+        <ul className="smurf-list">
+          <li>{smurfs.name}</li>
+          <button onClick={getSmurfs}>Get Smurfs</button>
+        </ul>
+      </div>
     );
   }
 };
