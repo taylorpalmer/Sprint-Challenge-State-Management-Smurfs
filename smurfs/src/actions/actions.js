@@ -37,7 +37,7 @@ export const postSmurfs = (smurfs) => (dispatch) => {
   dispatch({ type: POST_SMURFS_START });
 
   axios
-    .get("http://localhost:3333/smurfs", smurfs)
+    .post("http://localhost:3333/smurfs", smurfs)
     .then((res) => {
       console.log(res);
 
