@@ -2,6 +2,9 @@ import {
   FETCHING_SMURFS_START,
   FETCHING_SMURFS_SUCCESS,
   FETCHING_SMURFS_FAILURE,
+  POST_SMURFS_START,
+  POST_SMURFS_SUCCESS,
+  POST_SMURFS_FAILURE,
 } from "../actions/actions";
 
 export const initialState = {
@@ -34,6 +37,21 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: false,
+        error: action.payload,
+      };
+    case POST_SMURFS_START:
+      return {
+        ...state,
+        smurfs: action.payload,
+      };
+    case POST_SMURFS_SUCCESS:
+      return {
+        ...state,
+        smurfs: action.payload,
+      };
+    case POST_SMURFS_FAILURE:
+      return {
+        ...state,
         error: action.payload,
       };
     default:
