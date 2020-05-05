@@ -4,6 +4,7 @@ import axios from "axios";
 
 import { SmurfContext } from "../contexts/SmurfContext";
 import SmurfList from "../components/SmurfList";
+import AddSmurfForm from "./AddSmurfForm";
 
 const App = () => {
   const [smurfs, setSmurfs] = useState([]);
@@ -24,6 +25,7 @@ const App = () => {
       <SmurfContext.Provider value={{ smurfs, setSmurfs }}>
         <h1>Smurf Village</h1>
         <SmurfList />
+        <AddSmurfForm />
       </SmurfContext.Provider>
     </div>
   );
